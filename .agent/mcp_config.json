@@ -1,0 +1,80 @@
+{
+  "mcpServers": {
+
+    "google-news-trends": {
+      "command": "uvx",
+      "args": ["google-news-trends-mcp"],
+      "description": "Google News + Google Trends por keyword, topic y location. Sin API key requerida."
+    },
+
+    "rss-news-agent": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/teo4348/mcp-rss-news-agent", "mcp-rss-news-agent"],
+      "description": "Descubre y resume RSS de cualquier web. Busqueda por keyword, categoria y pais."
+    },
+
+    "mcp-rss": {
+      "command": "npx",
+      "args": ["-y", "@missionsquad/mcp-rss"],
+      "description": "Monitor multi-feed RSS en paralelo con cache TTL. Exporta OPML."
+    },
+
+    "the-news-api": {
+      "command": "npx",
+      "args": ["-y", "git+https://github.com/Malachi-devel/the-news-api-mcp-server"],
+      "env": {
+        "THE_NEWS_API_KEY": "${THE_NEWS_API_KEY}"
+      },
+      "description": "TheNewsAPI con filtros avanzados por categoria, pais y fecha. Key gratuita en thenewsapi.com"
+    },
+
+    "soccer-mcp": {
+      "command": "python",
+      "args": ["/opt/mcp-servers/soccer-mcp-server/soccer_server.py"],
+      "env": {
+        "RAPID_API_KEY_FOOTBALL": "${RAPID_API_KEY_FOOTBALL}"
+      },
+      "description": "Datos de futbol via API-Football. Premier League, La Liga, Champions, MLS. Fixtures live, goles, tarjetas, stats de jugadores. Key en rapidapi.com"
+    },
+
+    "youtube-transcript": {
+      "command": "npx",
+      "args": ["-y", "@kimtaeyoon83/mcp-server-youtube-transcript"],
+      "description": "Extrae transcripts de cualquier video YouTube por URL o ID. Sin API key."
+    },
+
+    "youtube-full": {
+      "command": "npx",
+      "args": ["-y", "git+https://github.com/coyaSONG/youtube-mcp-server"],
+      "env": {
+        "YOUTUBE_API_KEY": "${YOUTUBE_API_KEY}"
+      },
+      "description": "Busqueda avanzada YouTube, trending por region, stats de canal, comentarios y transcripts. Key en console.cloud.google.com"
+    },
+
+    "twitter-mcp": {
+      "command": "npx",
+      "args": ["-y", "git+https://github.com/TaazKareem/twitter-mcp-server"],
+      "env": {
+        "TWITTER_API_KEY": "${TWITTER_API_KEY}",
+        "TWITTER_API_SECRET": "${TWITTER_API_SECRET}",
+        "TWITTER_ACCESS_TOKEN": "${TWITTER_ACCESS_TOKEN}",
+        "TWITTER_ACCESS_SECRET": "${TWITTER_ACCESS_SECRET}"
+      },
+      "description": "get_trends, search por hashtag, timelines, threads. Key en developer.twitter.com"
+    },
+
+    "notebooklm": {
+      "command": "npx",
+      "args": ["-y", "notebooklm-mcp@latest"],
+      "description": "Crea y consulta cuadernos en NotebookLM con citas. Requiere cuenta Google activa."
+    },
+
+    "notebooklm-ingest": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/joeseesun/anything-to-notebooklm", "anything-to-notebooklm"],
+      "description": "Ingesta multi-fuente a NotebookLM: URLs, PDFs, YouTube, Markdown, busquedas web."
+    }
+
+  }
+}
